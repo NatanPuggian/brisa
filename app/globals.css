@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brisa-cream: #FAF6EF;
+  --color-brisa-cream-dark: #F0E9DC;
+  --color-brisa-turquoise: #1B8FB8;
+  --color-brisa-turquoise-dark: #146480;
+  --color-brisa-turquoise-light: #A5D8E5;
+  --color-brisa-leaf: #7BAE5C;
+  --color-brisa-leaf-dark: #4E7A38;
+  --color-brisa-ink: #0F3B4E;
+  --color-brisa-ink-muted: #4A6B78;
+  --color-brisa-line: #E5DDCE;
+
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: var(--color-brisa-cream);
+  --foreground: var(--color-brisa-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-brisa-cream);
+  color: var(--color-brisa-ink);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: var(--color-brisa-turquoise-light);
+  color: var(--color-brisa-ink);
 }
