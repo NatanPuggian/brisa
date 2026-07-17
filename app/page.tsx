@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig, whatsappUrl } from "@/lib/siteConfig";
 import { featuredServices } from "@/lib/services";
 
@@ -7,14 +8,25 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-6 pt-16 pb-24 md:pt-24 md:pb-32 grid md:grid-cols-[1.1fr_1fr] gap-12 items-center">
-          <div>
+        <div className="mx-auto max-w-6xl px-6 pt-10 pb-20 md:pt-24 md:pb-32 grid md:grid-cols-[1.1fr_1fr] gap-10 md:gap-12 items-center">
+          <div className="order-1 md:order-2 relative aspect-[4/5] rounded-3xl overflow-hidden border border-[color:var(--color-brisa-line)] shadow-xl shadow-[color:var(--color-brisa-turquoise-dark)]/10">
+            <Image
+              src="/karina-hero.jpg"
+              alt="Karina Gazetta, fundadora da Brisa Estética Integrativa"
+              fill
+              sizes="(max-width: 768px) 100vw, 500px"
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          <div className="order-2 md:order-1">
             <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-brisa-line)] bg-white/60 px-3 py-1 text-xs uppercase tracking-widest text-[color:var(--color-brisa-turquoise-dark)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-brisa-turquoise)]" />
               Duque de Caxias · RJ
             </span>
-            <h1 className="mt-6 font-serif text-4xl md:text-6xl leading-[1.05] text-[color:var(--color-brisa-turquoise-dark)]">
-              Estética que <em className="not-italic text-[color:var(--color-brisa-leaf-dark)]">ouve</em> antes de tocar.
+            <h1 className="mt-6 font-serif text-5xl md:text-7xl leading-[1.02] text-[color:var(--color-brisa-turquoise-dark)]">
+              Estética que <em className="not-italic text-[color:var(--color-brisa-leaf-dark)]">ouve</em>.
             </h1>
             <p className="mt-6 text-lg text-[color:var(--color-brisa-ink-muted)] max-w-lg leading-relaxed">
               Na Brisa você é atendida em sala privativa, sem fila, com tempo pra respirar e ser ouvida. Estética integrativa com 10 anos de experiência da Karina Gazetta.
@@ -35,12 +47,6 @@ export default function Home() {
                 Ver os serviços
               </Link>
             </div>
-          </div>
-
-          <div className="relative aspect-[4/5] rounded-3xl bg-gradient-to-br from-[color:var(--color-brisa-turquoise-light)] via-[color:var(--color-brisa-cream)] to-[color:var(--color-brisa-leaf)]/30 flex items-center justify-center border border-[color:var(--color-brisa-line)]">
-            <span className="text-sm text-[color:var(--color-brisa-ink-muted)] px-6 text-center">
-              [ foto do espaço ou da Karina em atendimento ]
-            </span>
           </div>
         </div>
       </section>
