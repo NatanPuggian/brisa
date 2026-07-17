@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig, whatsappUrl } from "@/lib/siteConfig";
 
 export function Footer() {
@@ -7,7 +8,14 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="font-serif text-2xl text-[color:var(--color-brisa-turquoise-dark)]">
+            <Image
+              src="/logo-brisa-color.png"
+              alt={siteConfig.name}
+              width={140}
+              height={112}
+              className="h-24 w-auto"
+            />
+            <div className="mt-4 font-serif text-lg text-[color:var(--color-brisa-turquoise-dark)]">
               {siteConfig.name}
             </div>
             <p className="mt-3 text-sm text-[color:var(--color-brisa-ink-muted)] max-w-md">
